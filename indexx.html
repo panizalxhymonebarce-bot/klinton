@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #3db8ff, #66ccff, #99ddff);
+            padding: 15px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px #1e90ff;
+        }
+
+        ul.nav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background: #1f6feb;
+            border-bottom: 2px solid #004aad;
+        }
+
+        ul.nav li a {
+            display: block;
+            color: white;
+            padding: 14px 18px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        ul.nav li a:hover {
+            background-color: #bde0ff;
+            color: #004aad;
+            border-radius: 10px;
+        }
+
+        .container {
+            display: flex;
+            height: 420px;
+        }
+
+        .navside {
+            width: 30%;
+            background: rgba(180, 220, 255, 0.7);
+            padding: 20px;
+        }
+
+        .navside ul {
+             list-style-type: none;
+            padding: 0;
+        }
+
+        .navside ul li a {
+            display: block;
+            padding: 12px;
+            color: #004aad;
+            font-weight: bold;
+            text-decoration: none;
+            margin-bottom: 8px;
+            border: 2px solid #6fb7ff;
+        }
+
+        .navside ul li a:hover {
+            background: #dff1ff;
+        }
+
+        main#content {
+            flex: 1;
+            padding: 20px;
+            background: #eef7ff;
+            margin: 10px;
+            border-radius: 15px;
+            border: 3px solid #66b2ff;
+            overflow-y: auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #3db8ff, #66ccff);
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>SDIHS</h2>
+    <h3>Santo Domingo Integrated High School</h3>
+</header>
+
+<ul class="nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">First Quarter</a></li>
+    <li><a href="#">Second Quarter</a></li>
+    <li><a href="#">About</a></li>
+</ul>
+
+<div class="container">
+    <section class="navside">
+        <ul>
+            <li><a onclick="loadContent('School Profile')">School Profile</a></li>
+            <li><a onclick="loadContent('SHS')">SHS</a></li>
+            <li><a onclick="loadContent('JHS')">JHS</a></li>
+        </ul>
+    </section>
+
+    <main id="content">
+        <h2>SDIHS</h2>
+        <p>Sto. Domingo Integrated High School was founded in 1971. It is located at Barangay Santo Domingo, City of Santa Rosa, Laguna.</p>
+    </main>
+</div>
+
+<footer>
+    <p>jazztineblanco@gmail.com | ####</p>
+</footer>
+
+<script>
+function loadContent(section) {
+    const content = document.getElementById('content');
+
+    if (section === 'School Profile') {
+        content.innerHTML = `
+            <h2>Mission</h2>
+            <p>To protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education where: Students learn in a child-friendly, gender-sensitive, safe, and motivating environment.
+Teachers facilitate learning and constantly nurture every learner; administrators and staff, as stewards of the institution, ensure an enabling and supportive environment for effective learning to happen; family, community, and other stakeholders are actively engaged and share responsibility for developing life-long learners.</p>
+            <h2>Vision</h2>
+            <p>We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potential and contribute meaningfully to building the nation. As a learner-centered public institution, the Department of Education continuously improves itself to better serve its stakeholders.</p>
+            <h2>Core Values</h2>
+            <ul>
+             <li>Maka-Diyos</li>
+             <li>Maka-tao</li>
+             <li>Makakalikasan</li>
+             <li>Makabansa</li>
+           </ul>  
+        `;
+    }
+
+    if (section === 'SHS') {
+        content.innerHTML = `
+            <h2>SHS</h2>
+            <h3>Women</h3>
+            <ul>
+             <li>Ofelia Franco</li>
+             <li>Marineth Pulido</li>
+             <li>Joyce Caranay</li>
+            </ul> 
+            <h3>Men</h3>
+            <ul>
+             <li>Joseph Trajano</li>
+            </ul> 
+        `;
+    }
+
+    if (section === 'JHS') {
+        content.innerHTML = `
+            <h2>JHS</h2>
+            <h3>Mayon</h3>
+            <ul>
+              <li>Blanco, Jazztine
